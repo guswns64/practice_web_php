@@ -1,0 +1,138 @@
+.contentCenter{
+  text-align: center;
+}
+
+#wrap{
+  margin: auto;
+  width:1020px;
+  border: 1px solid black;
+  padding-bottom: 10px;
+}
+
+#provision{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#provision ol{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#provision li{
+  background-color: #A4A4A4;
+  display: inline-block;
+  width: 500px;
+  height: 50px;
+  text-align: center;
+}
+
+.textDeco{
+  color:blue;
+  font-size: 20px;
+}
+
+h3{
+  margin: 20px 0px 0px 10px;
+  padding: 0px;
+}
+
+#provisionContent{
+  margin: auto;
+  width: 1000px;
+  height: 300px;
+  overflow: auto;
+  resize: none;
+}
+
+#chk_provision_div input:last-child{
+  margin-left: 50px;
+}
+
+.provisionTable{
+  width: 1000px;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: auto;
+}
+.provisionTable th{
+  background-color: #A4A4A4;
+}
+.provisionTable th, .provisionTable td {
+  border: 1px solid black;
+}
+
+.provisionTableRadioBtn{
+  width:85px;
+  text-align:left;
+  margin:auto;
+}
+
+#joinTable{
+  width: 1000px;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: auto;
+  text-align: left;
+}
+
+#joinTable td{
+  border: 1px solid #E6E6E6;
+  padding: 5px;
+}
+
+#joinTable tr td:first-child{
+  width: 120px;
+  padding-left: 20px;
+}
+
+#joinTable tr td:last-child{
+  padding-left: 10px;
+}
+
+.marginLeft{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#joinBtn{
+  margin-top: 10px;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.zipCodeText{
+  display: inline-block;
+  width: 40px;
+}
+
+.phoneNumberText{
+  display: inline-block;
+  vertical-align: middle;
+  width:50px;
+  margin-bottom: 4px;
+}
+
+#overlay{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color:black;
+  opacity: .50;
+  display: none;
+}
+
+#loadingImg{
+  position: fixed;
+  width:100px;
+  height:100px;
+  left: 50%;
+  top: 50%;
+  opacity: 1.0;
+  display: none;
+}

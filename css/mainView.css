@@ -1,0 +1,24 @@
+
+.productName{
+  text-align: center;
+}
+#wrap{
+  width:1200px;
+  margin:auto;
+  border: 5px solid yellow;
+}
+#leftContent{
+  width:250px;
+  border: 1px solid blue;
+  float: left;
+  margin-left: 115px;
+}
+#productList{
+  border: 1px solid red;
+  float: left;
+}
+#rightContent{
+  width:274px;
+  border: 1px solid black;
+  float: left;
+}

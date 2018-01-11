@@ -1,0 +1,55 @@
+#categoriMenu {
+  border: 1px solid red;
+  height:33px;
+  width:500;
+}
+#categoriMenu ul {
+  border: 1px solid blue;
+  margin: 0px;
+  padding: 0px;
+}
+#categoriMenu ul li {
+  list-style: none;
+  color: white;
+  background-color: black;
+  float: left;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+.link, .subLink {
+  text-decoration: none;
+  display: block;
+  width: 150px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.link {
+  color:white;
+}
+#categoriMenu .link:hover {
+  background-color: gray;
+  color: red;
+}
+.subMenu {
+  position: absolute;
+  height: 0px;
+  overflow: hidden;
+  display: block;
+  transition: height 0.2s;
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
+  -o-transition: height .2s;
+}
+ .menuLink:hover .subMenu{
+  height: 93px;
+}
+.subLink {
+  color:white;
+  background-color: black;
+}
+.subLink:hover{
+  color:red;
+  background-color: yellow;
+}
