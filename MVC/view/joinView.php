@@ -2,7 +2,7 @@
 <html>
   <head lang="en">
     <meta charset="utf-8">
-    <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css">
+    <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css?ver=1.0002">
     <link rel = "stylesheet" type = "text/css" href = "../../css/productCategori.css">
     <link rel = "stylesheet" type = "text/css" href = "../../css/joinView.css?ver=1.0002">
     <title>회원가입</title>
@@ -11,12 +11,9 @@
     <script src="../../js/joinView.js?ver=1.1"></script>
   </head>
   <body>
-    <div align="center">
-      <div id="mainLogo">
-        <a href="./mainView.php" style="" >
-          <h1>기맴준의 쇼핑몰</h1></a>
-      </div>
-    </div>
+    <?php
+      include_once "mainLogo.php";
+     ?>
     <nav>
       <div align="center">
         <?php

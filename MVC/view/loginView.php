@@ -1,56 +1,3 @@
-<style>
-  .centerContent{
-    text-align: center;
-  }
-  #accountLabel{
-    background-color: gray;
-    width:230px;
-    height:80px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  #loginPanel{
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-  }
-  #loginInputText{
-    margin: auto;
-    float: left;
-  }
-  #loginBtn{
-    margin-top: 3px;
-    margin-left: 2px;
-    height:42px;
-  }
-  #joinDiv{
-    margin-top: 2px;
-  }
-  #joinBtn{
-    text-decoration: none;
-    margin-left: 120px;
-  }
-  #userPanel{
-    display: none;
-    margin-top: -5px;
-    padding: 0 0 0 0;
-  }
-  .border{
-    border: 1px solid red;
-  }
-  .userInfoDesign{
-    display: inline-block;
-    width: 100px;
-    border: 1px solid black;
-  }
-  .userInfoDesign2{
-      display: inline-block;
-      border: 1px solid black;
-      font-size: 14px;
-      text-decoration: none;
-  }
-</style>
-
 <?php
 if(!isset($_SESSION)){
   @session_start();
@@ -114,6 +61,9 @@ if(!isset($_SESSION)){
         if( isset($_SESSION["userID"] )){
           session_unset($_SESSION["userID"]);
         }
+        if( isset($_SESSION["isAdmin"] )){
+          session_unset($_SESSION["isAdmin"]);
+        }
        ?>
       moveController(100);
     });
@@ -173,15 +123,15 @@ if(!isset($_SESSION)){
     <div class="border centerContent">
       <script type="text/javascript">
       <?php
-        if( isset($_SESSION["userID"]) ){
-          $userID = $_SESSION["userID"];
+        if( $_SESSION["isAdmin"] == "true" ){
+          $userID = "[관리자] " . $_SESSION["userID"];
         }
         else{
-          $userID = "고객";
+          $userID = $_SESSION["userID"];
         }
         echo "document.write('" . $userID . "');";
        ?>
-      </script>님 환영합니다.
+      </script>님<br>환영합니다!
     </div>
     <div class="border centerContent">
       <div class="userInfoDesign">
@@ -193,7 +143,14 @@ if(!isset($_SESSION)){
     </div>
     <div class="border centerContent">
       <div class="userInfoDesign2">
-        <a href="#">마이페이지</a>
+        <?php
+          if( $_SESSION["isAdmin"] == "true" ){
+              echo '<a href="#">관리페이지</a>';
+          }
+          else{
+              echo '<a href="#">마이페이지</a>';
+          }
+         ?>
       </div>
       <div class="userInfoDesign2">
         <a href="#">내정보수정</a>

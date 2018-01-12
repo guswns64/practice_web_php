@@ -7,36 +7,34 @@
   $db_ID;
   $db_PW;
   $isLogin = false;
+  $isAdmin = false;
   $callback_message = "";
   startCheckLogin();
 
   // 로그인 시도 시작
   function startCheckLogin(){
-    global $isLogin, $callback_message;
+    global $isLogin, $isAdmin, $callback_message;
 
     if(isInputText() == false){
       $callback_message = "아이디, 비밀번호 값을 넣어주세요.";
-      echo json_encode(array('isLoginSuccess' => $isLogin, 'callbackMessage' => $callback_message));
-      // echo json_encode(array('isLoginSuccess' => $isLogin));
+      echo json_encode(array('isLoginSuccess' => $isLogin, 'isAdmin' => $isAdmin, 'callbackMessage' => $callback_message));
       return;
     }
     if(isExistID() == false){
-      $callback_message = "아이디 또는 비밀번호가 틀렸습니다.";
-      echo json_encode(array('isLoginSuccess' => $isLogin, 'callbackMessage' => $callback_message));
-      // echo json_encode(array('isLoginSuccess' => $isLogin));
+      $callback_message = "아이디, 비밀번호 값을 넣어주세요.";
+      echo json_encode(array('isLoginSuccess' => $isLogin, 'isAdmin' => $isAdmin, 'callbackMessage' => $callback_message));
       return;
     }
     if(isConfirmPass() == false){
       $callback_message = "아이디 또는 비밀번호가 틀렸습니다.";
-      echo json_encode(array('isLoginSuccess' => $isLogin, 'callbackMessage' => $callback_message));
-      // echo json_encode(array('isLoginSuccess' => $isLogin));
+      echo json_encode(array('isLoginSuccess' => $isLogin, 'isAdmin' => $isAdmin, 'callbackMessage' => $callback_message));
       return;
     }
     else{
       $callback_message = "로그인 성공.";
       $isLogin = true;
       setLoginSession();
-      echo json_encode(array('isLoginSuccess' => $isLogin, 'callbackMessage' => $callback_message));
+      echo json_encode(array('isLoginSuccess' => $isLogin, 'isAdmin' => $isAdmin, 'callbackMessage' => $callback_message));
     }
   }
 
@@ -55,16 +53,16 @@
 
   // ID가 존재하는지 확인
   function isExistID(){
-    global $login_id;
+    global $login_id, $isAdmin, $db_ID, $db_PW;
 
-    $mysql_query = "select id, pw from account_info where id = '$login_id'";
+    $mysql_query = "select id, pw, isAdmin from account_info where id = '$login_id'";
     $mysql_result = mysqli_query($GLOBALS['mysql_connect'], $mysql_query);
     $query_num = mysqli_num_rows($mysql_result);
     if($query_num == 1){
-      global $db_ID, $db_PW;
       $row = mysqli_fetch_assoc($mysql_result);
       $db_ID = $row["id"];
       $db_PW = $row["pw"];
+      $isAdmin = $row["isAdmin"];
       return true;
     }
     else{
@@ -73,8 +71,7 @@
   }
 
   // 비밀번호 체크
-  function IsConfirmPass(){
-    return true;
+  function isConfirmPass(){
     global $login_pw, $db_PW;
     if($login_pw == $db_PW){
       return true;
@@ -86,9 +83,10 @@
 
   // 로그인 관련 세션 세팅
   function setLoginSession(){
-    global $login_id;
+    global $login_id, $isAdmin;
     if(!isset($_SESSION)) session_start();
     $_SESSION["userID"] = $login_id;
+    $_SESSION["isAdmin"] = $isAdmin;
   }
 
 ?>

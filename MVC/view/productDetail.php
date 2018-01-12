@@ -7,7 +7,7 @@
 <html>
   <head lang="en">
     <meta charset="utf-8">
-    <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css">
+    <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css?version=1.00001">
     <link rel = "stylesheet" type = "text/css" href = "../../css/productCategori.css">
     <link rel = "stylesheet" type = "text/css" href = "../../css/productDetail.css?ver=1.0006">
     <title>회원가입</title>
@@ -33,12 +33,9 @@
     </script>
   </head>
   <body>
-    <div align="center">
-      <div id="mainLogo">
-        <a href="./mainView.php" style="" >
-          <h1>기맴준의 쇼핑몰</h1></a>
-      </div>
-    </div>
+    <?php
+      include_once "mainLogo.php";
+     ?>
     <nav>
       <div align="center" style="margin-bottom: 20px">
         <?php

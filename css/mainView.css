@@ -3,17 +3,18 @@
   text-align: center;
 }
 #wrap{
-  width:1200px;
+  width:1500px;
   margin:auto;
   border: 5px solid yellow;
+  text-align: center;
 }
 #leftContent{
-  width:250px;
+  width:326px;
   border: 1px solid blue;
   float: left;
   margin-left: 115px;
 }
-#productList{
+#centerContent{
   border: 1px solid red;
   float: left;
 }

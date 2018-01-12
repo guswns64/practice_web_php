@@ -1,6 +1,11 @@
+#mainLogoWrap{
+  text-align: center;
+}
+
 #mainLogo{
-  margin: 20px;
+  display: inline-block;
   border:1px solid black;
   width:1000px;
   height:80px;
+  margin-bottom: 20px;
 }
