@@ -6,6 +6,7 @@
   define("STATE_JOIN", 120);
   define("STATE_LOGIN", 140);
   define("STATE_DETAIL_PRODUCT", 200);
+  define("STATE_MANAGEMENT", 300);
 
   $control_state = $_GET['control_state'];
   // 이동할 페이지
@@ -54,6 +55,11 @@
       case STATE_DETAIL_PRODUCT:
         console("상품 세부 정보 페이지로 이동합니다.");
         $moveURL = "Location:../view/productDetail.php?productID=" . $_GET['productID'];
+        break;
+
+      case STATE_MANAGEMENT:
+        console("관리자 페이지로 이동합니다.");
+        $moveURL = "Location:../view/manageDir/mainManageView.php";
         break;
     }
   }

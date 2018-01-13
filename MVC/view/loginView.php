@@ -145,7 +145,7 @@ if(!isset($_SESSION)){
       <div class="userInfoDesign2">
         <?php
           if( $_SESSION["isAdmin"] == "true" ){
-              echo '<a href="#">관리페이지</a>';
+              echo '<a href="../controller/mainController.php?control_state=300">관리페이지</a>';
           }
           else{
               echo '<a href="#">마이페이지</a>';
