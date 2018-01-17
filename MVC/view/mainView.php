@@ -19,7 +19,7 @@
       <?php
         include_once "category.php";
        ?>
-   </div>
+    </div>
   </nav>
   <div id="wrap">
     <div id="leftContent">

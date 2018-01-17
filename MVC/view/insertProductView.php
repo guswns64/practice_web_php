@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel = "stylesheet" type = "text/css" href = "../../css/insertProductView.css?ver=1.2">
+    <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css?ver=1.0002">
     <script type="text/javascript" src="../../api/smarteditor2-master/dist/js/service/HuskyEZCreator.js?ver=1.1" charset="utf-8"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../../js/insertProduct.js?ver=1.6"></script>
@@ -28,6 +29,10 @@
     </script>
   </head>
   <body>
+    <?php
+      include_once "mainLogo.php";
+     ?>
+
     <div id="wrap">
 
       <div id="subject">

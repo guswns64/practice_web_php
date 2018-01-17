@@ -7,6 +7,7 @@
   define("STATE_LOGIN", 140);
   define("STATE_DETAIL_PRODUCT", 200);
   define("STATE_MANAGEMENT", 300);
+  define("STATE_INSERT_PRODUCT", 310);
 
   $control_state = $_GET['control_state'];
   // 이동할 페이지
@@ -61,6 +62,12 @@
         console("관리자 페이지로 이동합니다.");
         $moveURL = "Location:../view/manageDir/mainManageView.php";
         break;
+
+      case STATE_INSERT_PRODUCT:
+        console("상품 등록 페이지로 이동합니다");
+        $moveURL = "Location:../view/insertProductView.php";
+        break;
+
     }
   }
 

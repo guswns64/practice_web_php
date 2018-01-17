@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel = "stylesheet" type = "text/css" href = "../../../css/mainLogo.css?ver=1.0002">
-    <link rel = "stylesheet" type = "text/css" href = "../../../css/manageDir/manageList.css?ver=1.0004">
+    <link rel = "stylesheet" type = "text/css" href = "../../../css/manageDir/manageList.css?ver=1.0005">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
@@ -27,8 +27,8 @@
       <!-- 관리 리스트들을 담는 div -->
       <div id="manageList">
         <ul>
-          <li>상품 관리</li>
-          <li>상품 등록</li>
+          <a href='#'><li>상품 관리</li></a>
+          <a href='../../controller/mainController.php?control_state=310'><li>상품 등록</li></a>
         </ul>
       </div>
       <!-- 관리 리스트에서 불러온 주요 컨텐츠를 표시하는 div -->
