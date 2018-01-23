@@ -1,40 +1,22 @@
+
 <?php
-  define("LOCAL_MODE", 12039);
-  define("HOST_MODE", 18492);
-
-  $mode = LOCAL_MODE;
-
   $currentPath = getcwd();
-  switch($mode){
-    case LOCAL_MODE:
-      $currentPathArr = explode("\\", $currentPath);
-      break;
+  $currentPath = str_replace("\\","/",$currentPath);
+  $currentPathArr = explode("/", $currentPath);
 
-    case HOST_MODE:
-      $currentPathArr = explode("/", $currentPath);
-      break;
-  }
-
-  $count = 0;
+  //상위 폴더로 올라가게 하는 경로
+  $ascendPath = "";
   for($index = (count($currentPathArr)-1); $index >= 0; $index--){
     $currentPathIndex = $currentPathArr[$index];
-    $count++;
-    if($currentPathIndex == "view"){
+    if($currentPathIndex == "MVC"){
       break;
     }
+    else{
+      $ascendPath = $ascendPath . "../";
+    }
   }
-
-// 현재 임시 방편으로 if문을 이용하여 경로 설정함.
-// 원래는 반복문 이용하여 더욱 유동적으로 작성해야함. 2018-01-13
-  if( $count == 1 ){
-    $homePath = "./mainView.php";
-  }
-  else if( $count == 2 ){
-    $homePath = "../mainView.php";
-  }
-  else if( $count == 3 ){
-    $homePath = "../../mainView.php";
-  }
+  $homePath = "controller/mainController.php?control_state=100";
+  $homePath = $ascendPath . $homePath;
  ?>
 
 <div id="mainLogoWrap">

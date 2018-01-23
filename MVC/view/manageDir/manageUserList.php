@@ -17,7 +17,7 @@
 
   <body>
     <?php
-      include_once "../mainLogo.php";
+    include_once "../mainLogo.php";
     ?>
     <div id="subject">
       관리페이지
@@ -28,7 +28,7 @@
       <?php include_once "./manageList.php"; ?>
       <!-- 관리 리스트에서 불러온 주요 컨텐츠를 표시하는 div -->
       <div id="manageContent">
-        관리 페이지 메인
+        유저 관리 목록 페이지
       </div>
     </div>
 

@@ -1,8 +1,5 @@
 <?php
 
-  // define("LOCAL_MODE", 12039);
-  // define("HOST_MODE", 18492);
-
   $local_mode = "localMode";
   $host_mode = "hostMode";
 
@@ -12,8 +9,8 @@
     case $local_mode:
       $mysql_hostname = 'localhost';
       $mysql_username = 'root';
-      $mysql_password = '1234';
-      $mysql_db = 'shopping_db';
+      $mysql_password = '123456';
+      $mysql_db = 'c197shopping_db';
       break;
 
     case $host_mode:

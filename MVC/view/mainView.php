@@ -29,8 +29,8 @@
     <div id="centerContent">
       <table width="300">
         <?php
-          include_once "../model/mainPageMD.php";
-          $productInfoArr = getGoodListData();
+          include_once "../model/getProductListMD.php";
+          $productInfoArr = getProductListData();
           $productInfo;
 
           $maxColumn = 3;

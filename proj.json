@@ -1,6 +1,6 @@
 {
     "localhost": {
         "url": "http://localhost:80",
-        "folder": "C:/apm/Apache24/htdocs"
+        "folder": "C:/Bitnami/wampstack-7.1.13-0/apache2/htdocs"
     }
 }

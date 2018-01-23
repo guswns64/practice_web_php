@@ -1,0 +1,35 @@
+
+#productListTable{
+  width: 1200px;
+  table-layout: auto;
+}
+
+#productListTable tr td{
+  border: 1px solid black;
+}
+
+#productListTable tr .productImgTD{
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+#productListTable tr .productImgTD img{
+  width: 100px;
+  height: 100px;
+  margin-top: 4px;
+}
+
+#productListTable tr.productListItem:hover{
+  /* -webkit-transform:scale(1.01); /*  크롬 */ */
+  /* -moz-transform:scale(1.01); /* FireFox */ */
+  /* -o-transform:scale(1.01); /* Opera */ */
+  /* transform:scale(1.01);
+  transition: transform .5s;
+  -o-transition: transform .5s;
+  -moz-transition: transform .5s; */
+  /* -webkit-transition: transform .5s; */
+  transition-property: all;
+  transition-duration: 0.5s;
+  background-color: gray;
+}

@@ -147,7 +147,7 @@ function insertSubmit(){
   formData.append("productDetailContent", productDetailContent);
 
   $.ajax({
-      url: '../model/insertProductMD.php',
+      url: '../../model/insertProductMD.php',
       type: 'POST',
       data: formData,
       processData: false,
@@ -158,7 +158,7 @@ function insertSubmit(){
         var objs = document.createElement("input");
         objs.setAttribute("type", "hidden");
         form.setAttribute("method", "post");
-        form.setAttribute("action", "../controller/mainController.php?control_state=100");
+        form.setAttribute("action", "../../controller/mainController.php?control_state=100");
         form.appendChild(objs);
         document.body.appendChild(form);
         form.submit();
