@@ -24,6 +24,6 @@
     <?php
       echo '<a href="'.$homePath.'">';
      ?>
-      <h1>기맴준의 쇼핑몰</h1></a>
+      <h1>테스트 쇼핑몰</h1></a>
   </div>
 </div>

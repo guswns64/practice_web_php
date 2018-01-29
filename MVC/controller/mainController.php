@@ -10,7 +10,7 @@
   define("STATE_PRODUCT_LIST", 305);
   define("STATE_INSERT_PRODUCT", 310);
   define("STATE_USER_LIST", 320);
-  define("STATE_COMMENT_LIST", 330);
+  define("STATE_CATEGORY", 330);
 
   $control_state = $_GET['control_state'];
   // 이동할 페이지
@@ -81,9 +81,9 @@
         $moveURL = "Location:../view/manageDir/manageUserList.php";
         break;
 
-      case STATE_COMMENT_LIST:
+      case STATE_CATEGORY:
         console("댓글 목록 페이지로 이동합니다");
-        $moveURL = "Location:../view/manageDir/manageCommentList.php";
+        $moveURL = "Location:../view/manageDir/manageCategory.php";
         break;
 
     }

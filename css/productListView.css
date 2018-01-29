@@ -1,0 +1,18 @@
+
+.productName{
+  text-align: center;
+}
+#wrap{
+  width:1500px;
+  margin:auto;
+  border: 5px solid yellow;
+  text-align: center;
+}
+#centerContent{
+  display: inline-block;
+  border: 1px solid red;
+}
+
+#centerContent table{
+  width: 300px;
+}

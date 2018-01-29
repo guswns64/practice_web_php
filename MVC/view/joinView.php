@@ -3,7 +3,6 @@
   <head lang="en">
     <meta charset="utf-8">
     <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css?ver=1.0002">
-    <link rel = "stylesheet" type = "text/css" href = "../../css/productCategori.css">
     <link rel = "stylesheet" type = "text/css" href = "../../css/joinView.css?ver=1.0002">
     <title>회원가입</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -14,13 +13,6 @@
     <?php
       include_once "mainLogo.php";
      ?>
-    <nav>
-      <div align="center">
-        <?php
-          include_once "category.php";
-         ?>
-     </div>
-    </nav>
 
     <div id="wrap">
 

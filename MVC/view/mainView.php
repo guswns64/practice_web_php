@@ -3,11 +3,12 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel = "stylesheet" type = "text/css" href = "../../css/mainView.css?ver=1.00005">
+    <link rel = "stylesheet" type = "text/css" href = "../../css/mainView.css?ver=1.00006">
     <link rel = "stylesheet" type = "text/css" href = "../../css/loginView.css?ver=1.00001">
     <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css?ver=1.0002">
-    <link rel = "stylesheet" type = "text/css" href = "../../css/productCategori.css">
+    <link rel = "stylesheet" type = "text/css" href = "../../css/productCategory.css?ver=1.00003">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../js/productCategory.js"></script>
     <script src="../../js/jquery.cookie.js"></script>
 </head>
 <body>
@@ -31,27 +32,50 @@
         <?php
           include_once "../model/getProductListMD.php";
           $productInfoArr = getProductListData();
-          $productInfo;
+          if( $productInfoArr == null ){
+            $maxColumn = 3;
+            $currentColumn = 0;
 
-          $maxColumn = 3;
-          $currentColumn = 0;
+            for($index = 0; $index < 3; $index++){
+              $currentColumn++;
+              if($currentColumn == 1) echo "<tr>";
+                echo "<td class='productName'>";
+                echo "<a href='#'>";
+                  echo '<img src="../../gif/loading7.gif" width="200" height="250">';
+                echo "</a>";
+                echo "<a href='#'>없음</a>";
+              echo "</td>";
+              if ($currentColumn == $maxColumn) {
+                echo "</tr>";
+                $currentColumn = 0;
+              }
+            }
 
-          for($index = 0; $index < count($productInfoArr); $index++){
-            $productInfo = $productInfoArr[$index];
+          }
+          else{
+            $productInfo;
 
-            $currentColumn++;
-            if($currentColumn == 1) echo "<tr>";
-              echo "<td class='productName'>";
-              echo "<a href='../controller/mainController.php?control_state=200&productID=" . $productInfo["id"] . "'>";
-                echo '<img src='.$productInfo["thumbnail_img_path"].' width="200" height="250">';
-              echo "</a>";
-              echo "<a href='../controller/mainController.php?control_state=200&productID=" . $productInfo["id"] . "'>" . $productInfo["name"] . "</a>";
-            echo "</td>";
-            if ($currentColumn == $maxColumn) {
-              echo "</tr>";
-              $currentColumn = 0;
+            $maxColumn = 3;
+            $currentColumn = 0;
+
+            for($index = 0; $index < count($productInfoArr); $index++){
+              $productInfo = $productInfoArr[$index];
+
+              $currentColumn++;
+              if($currentColumn == 1) echo "<tr>";
+                echo "<td class='productName'>";
+                echo "<a href='../controller/mainController.php?control_state=200&productID=" . $productInfo["id"] . "'>";
+                  echo '<img src='.$productInfo["thumbnail_img_path"].' width="200" height="250">';
+                echo "</a>";
+                echo "<a href='../controller/mainController.php?control_state=200&productID=" . $productInfo["id"] . "'>" . $productInfo["name"] . "</a>";
+              echo "</td>";
+              if ($currentColumn == $maxColumn) {
+                echo "</tr>";
+                $currentColumn = 0;
+              }
             }
           }
+
         ?>
       </table>
     </div>

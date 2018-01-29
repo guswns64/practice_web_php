@@ -1,0 +1,56 @@
+
+#mainCategoryDIV, #subCategoryDIV{
+  width: 200px;
+  height: 500px;
+  float: left;
+  display: inline;
+  position: relative;
+  border: 1px solid red;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  left: 370px;
+}
+
+#mainCategoryDIV{
+  margin-right: 50px;
+}
+
+#mainCategory, #subCategory{
+  display: inline-block;
+  width: 90%;
+  height: 90%;
+  margin-top: 20px;
+  border: 1px solid blue;
+  overflow: scroll;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight:;
+}
+
+#mainCategory div, #subCategory div{
+  display: inline-block;
+  width: 100%;
+  border-left: : 1px solid red;
+  border-right: : 1px solid red;
+  border-top: 1px solid red;
+  font-size: 20px;
+}
+
+#mainCategory div:last-child, #subCategory div:last-child{
+  border-bottom: 1px solid red;
+}
+
+#mainCategory div:hover, #subCategory div:hover{
+  /* -webkit-transform:scale(1.01); /*  크롬 */ */
+  /* -moz-transform:scale(1.01); /* FireFox */ */
+  /* -o-transform:scale(1.01); /* Opera */ */
+  /* transform:scale(1.01);
+  transition: transform .5s;
+  -o-transition: transform .5s;
+  -moz-transition: transform .5s; */
+  /* -webkit-transition: transform .5s; */
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: gray;
+  cursor: pointer;
+}

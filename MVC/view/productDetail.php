@@ -7,12 +7,12 @@
 <html>
   <head lang="en">
     <meta charset="utf-8">
-    <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css?version=1.00001">
-    <link rel = "stylesheet" type = "text/css" href = "../../css/productCategori.css">
-    <link rel = "stylesheet" type = "text/css" href = "../../css/productDetail.css?ver=1.0006">
     <title>회원가입</title>
-
+    <link rel = "stylesheet" type = "text/css" href = "../../css/mainLogo.css?version=1.00001">
+    <link rel = "stylesheet" type = "text/css" href = "../../css/productCategory.css?ver=1.00000">
+    <link rel = "stylesheet" type = "text/css" href = "../../css/productDetail.css?ver=1.0006">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../js/productCategory.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
 

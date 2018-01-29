@@ -46,13 +46,6 @@ if(!isset($_SESSION)){
       });
     });
 
-/*
-    $("#joinBtn").click(function(){
-      console.log("회원가입 페이지를 눌렀습니다");
-      state_num = 120;
-      // moveController();
-    });
-*/
 
     $("#logoutBtn").click(function(){
       console.log("로그아웃 버튼을 눌렀습니다");
@@ -123,11 +116,22 @@ if(!isset($_SESSION)){
     <div class="border centerContent">
       <script type="text/javascript">
       <?php
-        if( $_SESSION["isAdmin"] == "true" ){
-          $userID = "[관리자] " . $_SESSION["userID"];
+        if( isset($_SESSION["userID"]) ){
+          $session_userID = $_SESSION["userID"];
         }
         else{
-          $userID = $_SESSION["userID"];
+          $session_userID = "[error]";
+        }
+        if( isset($_SESSION["isAdmin"]) ){
+          if( $_SESSION["isAdmin"] == "true" ){
+            $userID = "[관리자] " .$session_userID;
+          }
+          else{
+            $userID = $session_userID;
+          }
+        }
+        else{
+          $userID = $session_userID;
         }
         echo "document.write('" . $userID . "');";
        ?>
@@ -144,12 +148,20 @@ if(!isset($_SESSION)){
     <div class="border centerContent">
       <div class="userInfoDesign2">
         <?php
+        if( isset($_SESSION["isAdmin"]) ){
           if( $_SESSION["isAdmin"] == "true" ){
               echo '<a href="../controller/mainController.php?control_state=300">관리페이지</a>';
           }
           else{
+              // echo '<a href="../controller/mainController.php?control_state=300">관리페이지</a>';
               echo '<a href="#">마이페이지</a>';
           }
+        }
+        else{
+          // echo '<a href="../controller/mainController.php?control_state=300">관리페이지</a>';
+          echo '<a href="#">마이페이지</a>';
+        }
+
          ?>
       </div>
       <div class="userInfoDesign2">

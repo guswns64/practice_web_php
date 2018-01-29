@@ -1,10 +1,23 @@
 <?php
-  include_once "../../debugDir/debug.php";
   include_once "mysqlConnectMD.php";
 
-  function getProductListData(){
-    $mysql_query = "select * from product_info";
+  function getProductListData($kindParam=null, $isSubKind=false){
+    if( $kindParam == null ){
+      $mysql_query = "select * from product_info";
+    }
+    else if( $isSubKind == true ){
+      $mysql_query = "select * from product_info where sub_kind = '$kindParam'";
+    }
+    else{
+      $mysql_query = "select * from product_info where kind = '$kindParam'";
+    }
+
     $mysql_result = mysqli_query($GLOBALS['mysql_connect'], $mysql_query);
+    $query_num = mysqli_num_rows($mysql_result);
+    if( $query_num == 0 ){
+      // 상품이 없습니다!!!
+      return null;
+    }
 
     $destinationAscendPath = getDestinationPath("MVC");
     $destinationAscendPath = "../" . $destinationAscendPath;

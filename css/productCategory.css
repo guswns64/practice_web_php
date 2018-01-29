@@ -1,0 +1,60 @@
+#categoriMenu {
+  height:33px;
+  width:452px;
+  text-align: center;
+}
+#categoriMenu ul {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+#categoriMenu ul li {
+  list-style: none;
+  background-color: black;
+  float: left;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.2s;
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
+  -o-transition: height .2s;
+}
+
+.menuLink{
+  height: 30px;
+}
+
+.link, .subLink {
+  text-decoration: none;
+  display: block;
+  width: 150px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.link {
+  color:white;
+  border-bottom: 1px solid white;
+}
+
+#categoriMenu .link:hover {
+  background-color: gray;
+  color: red;
+}
+
+.subMenu {
+  position: absolute;
+}
+
+.subLink {
+  color:white;
+  background-color: #4d4d4d;
+}
+
+.subLink:hover{
+  color:red;
+  background-color: #83605a;
+}

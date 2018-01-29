@@ -39,9 +39,9 @@
     $product_thumbnail_dir_path = $product_id_dir_path . "/thumbnail_imgs";
     $product_contentImgs_dir_path = $product_id_dir_path . "/content_imgs";
 
-    if( !is_dir($product_id_dir_path) ) mkdir($product_id_dir_path, 0644);
-    if( !is_dir($product_thumbnail_dir_path) ) mkdir($product_thumbnail_dir_path, 0644);
-    if( !is_dir($product_contentImgs_dir_path) ) mkdir($product_contentImgs_dir_path, 0644);
+    if( !is_dir($product_id_dir_path) ) mkdir($product_id_dir_path, 0755);
+    if( !is_dir($product_thumbnail_dir_path) ) mkdir($product_thumbnail_dir_path, 0755);
+    if( !is_dir($product_contentImgs_dir_path) ) mkdir($product_contentImgs_dir_path, 0755);
   }
 
   // 상품 관련 이미지 넣기
@@ -142,7 +142,8 @@
     $productName = $_POST['productName'];
     $productPrice = $_POST['productPrice'];
     $productKind = $_POST['productKind'];
-    $mysql_query = "insert into product_info (id, name, price, kind, contentText) values ('$productID','$productName','$productPrice','$productKind','$contentHTML')";
+    $productSubKind = $_POST['productSubKind'];
+    $mysql_query = "insert into product_info (id, name, price, kind, sub_kind, contentText) values ('$productID','$productName','$productPrice','$productKind','$productSubKind','$contentHTML')";
     // console("mysql_query : " . $mysql_query);
     if(mysqli_query($mysql_connect, $mysql_query) == true){
       console("db입력 완료!");

@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel = "stylesheet" type = "text/css" href = "../../../css/manageDir/manageList.css?ver=1.0005">
-    <link rel = "stylesheet" type = "text/css" href = "../../../css/manageDir/insertProductView.css?ver=1.3">
+    <link rel = "stylesheet" type = "text/css" href = "../../../css/manageDir/insertProductView.css?ver=1.4">
     <link rel = "stylesheet" type = "text/css" href = "../../../css/mainLogo.css?ver=1.0002">
     <script type="text/javascript" src="../../../api/smarteditor2-master/dist/js/service/HuskyEZCreator.js?ver=1.1" charset="utf-8"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="../../../js/insertProduct.js?ver=1.7"></script>
+    <script src="../../../js/manage/insertProduct.js?ver=1.00001"></script>
   </head>
   <body>
     <?php
@@ -20,7 +20,12 @@
      <div class="margin"></div>
      <div id="manageWrap">
        <!-- 관리 리스트들을 담는 div -->
-       <?php include_once "./manageList.php"; ?>
+       <?php
+         // 메인 로고 세팅
+         include_once "./manageList.php";
+         include_once "../../model/getCategoryList.php";
+         $categoryArr = getCategoryObj();
+         ?>
        <!-- 관리 리스트에서 불러온 주요 컨텐츠를 표시하는 div -->
        <div id="manageContent">
          <div id="wrap">
@@ -34,11 +39,22 @@
              <br><br class="lineHeight">
              상품 가격 : <input type="number" id="productPrice" value="10000">원
              <br><br class="lineHeight">
-             상품 종류 : <select id="productKind">
-                          <option value="top">top</option>
-                          <option value="bottom">bottom</option>
-                          <option value="shoes">shoes</option>
-                        </select>
+               상품 종류 : <select id="productKind">
+                          </select>
+              <div id="productSubKindDiv">
+               세부 종류 : <select id="productSubKind">
+                          </select>
+              </div>
+              <script type="text/javascript">
+                var categoryObjArr = <?= json_encode($categoryArr) ?>;
+                for(var index = 0; index < categoryObjArr.length; index++ ){
+                  var categoryObj = categoryObjArr[index];
+                  var categoryKey = categoryObj[0]["key"];
+                  var categoryValue = categoryObj[0]["value"];
+                  $("#productKind").append("<option value='"+categoryKey+"'>"+categoryValue+"</option>")
+                }
+              </script>
+
              <br><br class="lineHeight">
              <div class="thumbnailArea">
                메인 섬네일 이미지 (한개만 선택가능) : <input type="file" id="mainThumbnailImg" />
